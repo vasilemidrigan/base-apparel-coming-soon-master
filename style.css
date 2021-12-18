@@ -10,8 +10,9 @@
   --linear-2: 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
 }
 /* Global Styles */
-html,
-body {
+*,
+*::before,
+*::after {
   font-family: "Josefin Sans", sans-serif;
   font-size: 16px;
   color: var(--desaturated-red);
@@ -19,53 +20,62 @@ body {
   margin: 0;
   padding: 0;
 }
+/* Body */
 body {
   height: 100vh;
-}
-body,
-div {
-  border: 1px solid blue;
-}
-/* Wrapper */
-.wrapper {
-  position: relative;
-  height: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
-.wrapper div {
+/* Inputs */
+input {
+  border: none;
+  border: 1px solid var(--desaturated-red);
+  border-radius: 20px;
   width: 100%;
+  height: 20px;
+  padding-left: 10px;
+  font-size: 0.5em;
+  position: relative;
 }
-.wrapper div {
-  margin-top: 50px;
+/* Main Wrapper */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  min-width: 140px;
+  height: 100%;
+}
+/* Logo Section*/
+.logo {
+  /* border: 1px solid red; */
+  width: 60px;
+  margin: 10px;
+}
+/* Hero Image Section*/
+.hero-image {
+  max-width: 100%;
+}
+/* Content Section*/
+.content-wrapper {
   text-align: center;
 }
-/* Logo */
-.logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 85px;
-}
-/* Hero */
-.hero {
-  width: 100%;
-}
-/* Header */
 .header {
-  font-size: 2.9em;
+  font-size: 1.3em;
   text-transform: uppercase;
-  color: var(--dark-grayish-red);
+  margin: 10px 30px;
 }
 .header span {
-  color: var(--desaturated-red);
+  color: var(--dark-grayish-red);
+  font-weight: 400;
 }
-/* Content */
 .content {
-  line-height: 25px;
-  padding: 0 50px 0 50px;
+  font-size: 0.6em;
+  line-height: 13px;
+  margin: 0px 10px;
 }
-/* Email */
+/* Email Input */
 .email {
+  margin: 0 auto;
+  padding: 3px;
 }
