@@ -6,8 +6,16 @@
   /* Neutral */
   --dark-grayish-red: hsl(0, 6%, 24%);
   /* Gradients */
-  --linear: 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
-  --linear-2: 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+  --first-linear-gradient: linear-gradient(
+    135deg,
+    hsl(0, 100%, 90%),
+    hsl(0, 100%, 78%)
+  );
+  --second-linear-gradient: linear-gradient(
+    135deg,
+    hsl(0, 80%, 86%),
+    hsl(0, 74%, 74%)
+  );
 }
 /* Global Styles */
 *,
@@ -22,21 +30,50 @@
 }
 /* Body */
 body {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-/* Inputs */
-input {
+/* Input */
+input[type="email"] {
   border: none;
   border: 1px solid var(--desaturated-red);
   border-radius: 20px;
   width: 100%;
   height: 20px;
   padding-left: 10px;
+  padding-right: 30px;
   font-size: 0.5em;
   position: relative;
+  outline: none;
+  box-shadow: 0px 1px 1px var(--desaturated-red);
+}
+input[type="email"]::placeholder {
+  color: var(--desaturated-red);
+}
+/* Button */
+button {
+  border: none;
+  border-radius: 20px;
+  background: var(--second-linear-gradient);
+  box-shadow: 0px 1px 1px var(--desaturated-red);
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  height: 20px;
+  width: 25px;
+}
+button:hover {
+  cursor: pointer;
+  background: var(--first-linear-gradient);
+  box-shadow: 0px 3px 3px var(--desaturated-red);
+  width: 35px;
+  transition: width 0.2s ease;
+}
+
+/* Links */
+a {
+  margin: 0 auto;
 }
 /* Main Wrapper */
 .wrapper {
@@ -59,14 +96,18 @@ input {
 /* Content Section*/
 .content-wrapper {
   text-align: center;
+  margin-top: 10px;
 }
 .header {
-  font-size: 1.3em;
+  font-size: 1.5em;
+  font-weight: 300;
   text-transform: uppercase;
   margin: 10px 30px;
 }
 .header span {
   color: var(--dark-grayish-red);
+  font-weight: 400;
+  font-size: 1em;
   font-weight: 400;
 }
 .content {
@@ -76,6 +117,12 @@ input {
 }
 /* Email Input */
 .email {
-  margin: 0 auto;
+  position: relative;
+  margin: 10px auto;
   padding: 3px;
+}
+
+.submit-btn > img {
+  width: 20%;
+  height: 40%;
 }

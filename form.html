@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiple email</title>
+  </head>
+  <body>
+    <form action="form.html" method="GET">
+      <label for="emails">Select the email:</label>
+      <input
+        type="email"
+        name="emails"
+        id="emails"
+        required
+        multiple
+        list="emails-addresses"
+      />
+      <datalist id="emails-addresses">
+        <option value="john@gmail.com">John</option>
+        <option value="carlos@gmail.com">Carlos</option>
+        <option value="veronica@gmail.com">Veronica/option></option>
+        <option value="profira@gmail.com">Profira</option>
+      </datalist>
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>
