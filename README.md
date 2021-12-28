@@ -46,7 +46,7 @@ Mobile Version with active states and error message
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://vasilemidrigan.github.io/base-apparel-coming-soon-master/)
+- Solution URL: [base-apparel-comming-soon-master](https://vasilemidrigan.github.io/base-apparel-coming-soon-master/)
 
 ## My process
 
