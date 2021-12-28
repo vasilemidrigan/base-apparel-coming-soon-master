@@ -26,11 +26,15 @@
     <div class="wrapper">
       <img class="logo" src="images/logo.svg" alt="BASE APPAREL logo" />
       <div class="hero">
-        <img
-          class="hero-image"
-          src="images/hero-mobile.jpg"
-          alt="BASE APPAREL logo"
-        />
+        <picture>
+          <source media="(max-width: 599px)" srcset="images/hero-mobile.jpg" />
+          <source media="(min-width: 600px)" srcset="images/hero-desktop.jpg" />
+          <img
+            src="images/hero-mobile.jpg"
+            class="hero-image"
+            alt="A pretty cute creature!"
+          />
+        </picture>
       </div>
       <div class="content-wrapper">
         <div class="header">We're <span>coming soon </span></div>
@@ -55,6 +59,12 @@
               alt="Greather than sign style button"
             />
           </button>
+          <img
+            src="images/icon-error.svg"
+            class="exclamation-mark hidden"
+            alt="Exclamation mark"
+          />
+          <div class="error-message hidden">please provide a valid email</div>
         </form>
       </div>
     </div>

@@ -1,4 +1,4 @@
-/* Variables */
+/* -------------------------------- Variables */
 :root {
   /* Primary */
   --desaturated-red: hsl(0, 36%, 70%);
@@ -17,7 +17,7 @@
     hsl(0, 74%, 74%)
   );
 }
-/* Global Styles */
+/* -----------------------------  General Styles */
 *,
 *::before,
 *::after {
@@ -33,6 +33,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 /* Input */
 input[type="email"] {
@@ -42,11 +43,10 @@ input[type="email"] {
   width: 100%;
   height: 20px;
   padding-left: 10px;
-  padding-right: 30px;
+  padding-right: 60px;
   font-size: 0.5em;
   position: relative;
   outline: none;
-  box-shadow: 0px 1px 1px var(--desaturated-red);
 }
 input[type="email"]::placeholder {
   color: var(--desaturated-red);
@@ -56,7 +56,6 @@ button {
   border: none;
   border-radius: 20px;
   background: var(--second-linear-gradient);
-  box-shadow: 0px 1px 1px var(--desaturated-red);
   position: absolute;
   top: 3px;
   right: 3px;
@@ -66,7 +65,7 @@ button {
 button:hover {
   cursor: pointer;
   background: var(--first-linear-gradient);
-  box-shadow: 0px 3px 3px var(--desaturated-red);
+  box-shadow: 0px 1px 1px var(--desaturated-red);
   width: 35px;
   transition: width 0.2s ease;
 }
@@ -75,6 +74,7 @@ button:hover {
 a {
   margin: 0 auto;
 }
+/* ----------------------------- Specific Styles  */
 /* Main Wrapper */
 .wrapper {
   display: flex;
@@ -85,18 +85,21 @@ a {
 }
 /* Logo Section*/
 .logo {
-  /* border: 1px solid red; */
+  grid-area: logo;
   width: 60px;
   margin: 10px;
 }
 /* Hero Image Section*/
+.hero {
+  grid-area: hero;
+}
 .hero-image {
   max-width: 100%;
 }
 /* Content Section*/
 .content-wrapper {
+  grid-area: content-wrapper;
   text-align: center;
-  margin-top: 10px;
 }
 .header {
   font-size: 1.5em;
@@ -117,12 +120,130 @@ a {
 }
 /* Email Input */
 .email {
+  grid-area: email;
   position: relative;
   margin: 10px auto;
   padding: 3px;
 }
-
+/* Submit button */
 .submit-btn > img {
   width: 20%;
   height: 40%;
+}
+/* Error Message Bubble */
+.error-message {
+  font-size: 0.5em;
+  color: var(--soft-red);
+  margin-top: 5px;
+  padding-left: 10px;
+  width: 100%;
+  height: 15px;
+}
+/* Exclamation Mark Image */
+.exclamation-mark {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 8px;
+  right: 45px;
+}
+
+/* Hide the error input state */
+.hidden {
+  display: none;
+}
+
+/* -------------------------- Media queries for minimum 650px wide screens */
+@media (min-width: 600px) {
+  /*  ----------------------- General styles */
+  input[type="email"] {
+    height: 25px;
+    box-shadow: unset;
+  }
+  /* Button */
+  button {
+    border: none;
+    border-radius: 20px;
+    background: var(--second-linear-gradient);
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    height: 24px;
+    width: 35px;
+  }
+  button:hover {
+    cursor: pointer;
+    background: var(--first-linear-gradient);
+    width: 45px;
+    transition: width 0.2s ease;
+  }
+  /* Reseting all properties of respective class to unset  */
+  .wrapper,
+  .content-wrapper,
+  .hero-image {
+    all: unset;
+  }
+  /* ------------------------- Specific Styles */
+  /* Wrapper */
+  .wrapper {
+    all: unset;
+    display: grid;
+    grid-template: 1fr 2fr 1fr / 1fr 1fr;
+    grid-template-areas:
+      "logo hero"
+      "content-wrapper hero"
+      "email hero";
+    column-gap: 80px;
+    max-width: min-content;
+    height: 100%;
+  }
+  /* Logo Section*/
+  .logo {
+    width: 80px;
+    margin: 30px 0 0 0;
+  }
+  /* Content Section*/
+  .content-wrapper {
+    height: min-content;
+  }
+  .header {
+    font-size: 2em;
+    margin: 0 60px 0 0;
+  }
+  .content {
+    margin: 20px 0 0 0;
+  }
+  /* Email Input */
+  .email {
+    margin-top: 10px;
+    width: 100%;
+    height: max-content;
+  }
+  /* Submit button */
+  .submit-btn > img {
+    width: 20%;
+    height: 40%;
+  }
+  /* Error Message Bubble */
+  .error-message {
+    font-size: 0.5em;
+    color: var(--soft-red);
+    margin-top: 5px;
+    padding-left: 10px;
+    width: 100%;
+    height: 15px;
+  }
+  /* Exclamation Mark Image */
+  .exclamation-mark {
+    top: 10px;
+    right: 55px;
+  }
+  /* Hero Image */
+  .hero {
+    height: 100%;
+  }
+  .hero-image {
+    height: 100%;
+    width: 300px;
+  }
 }
