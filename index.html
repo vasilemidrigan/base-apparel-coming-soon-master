@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- displays site properly based on user's device -->
+    <!-- Displays site properly based on user's device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Josefin Font -->
+    <!-- Josefin Font import from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,12 +23,18 @@
     <title>Frontend Mentor | Base Apparel coming soon page</title>
   </head>
   <body>
+    <!-- Main Wrapper -->
     <div class="wrapper">
+      <!-- Logo -->
       <img class="logo" src="images/logo.svg" alt="BASE APPAREL logo" />
+      <!-- Hero -->
       <div class="hero">
         <picture>
           <source media="(max-width: 599px)" srcset="images/hero-mobile.jpg" />
-          <source media="(min-width: 600px)" srcset="images/hero-desktop.jpg" />
+          <source
+            media="(min-width: 1000px)"
+            srcset="images/hero-desktop.jpg"
+          />
           <img
             src="images/hero-mobile.jpg"
             class="hero-image"
@@ -36,6 +42,7 @@
           />
         </picture>
       </div>
+      <!-- Content Wrapper -->
       <div class="content-wrapper">
         <div class="header">We're <span>coming soon </span></div>
         <div class="content">
@@ -44,6 +51,7 @@
           launch deals.
         </div>
       </div>
+      <!-- Email Input -->
       <div class="email">
         <form action="index.html" method="POST">
           <input

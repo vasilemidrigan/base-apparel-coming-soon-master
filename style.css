@@ -41,10 +41,10 @@ input[type="email"] {
   border: 1px solid var(--desaturated-red);
   border-radius: 20px;
   width: 100%;
-  height: 20px;
-  padding-left: 10px;
-  padding-right: 60px;
-  font-size: 0.5em;
+  height: 35px;
+  padding-left: 20px;
+  padding-right: 110px;
+  font-size: 1em;
   position: relative;
   outline: none;
 }
@@ -56,17 +56,18 @@ button {
   border: none;
   border-radius: 20px;
   background: var(--second-linear-gradient);
+  box-shadow: 0 10px 30px var(--desaturated-red);
   position: absolute;
   top: 3px;
   right: 3px;
-  height: 20px;
-  width: 25px;
+  height: 35px;
+  width: 45px;
 }
 button:hover {
   cursor: pointer;
   background: var(--first-linear-gradient);
-  box-shadow: 0px 1px 1px var(--desaturated-red);
-  width: 35px;
+  box-shadow: 0px 10px 30px var(--desaturated-red);
+  width: 55px;
   transition: width 0.2s ease;
 }
 
@@ -79,33 +80,34 @@ a {
 .wrapper {
   display: flex;
   flex-direction: column;
-  max-width: 200px;
-  min-width: 140px;
+  max-width: 375px;
+  min-width: 350px;
   height: 100%;
 }
 /* Logo Section*/
 .logo {
   grid-area: logo;
-  width: 60px;
-  margin: 10px;
+  width: 100px;
+  margin: 20px;
 }
 /* Hero Image Section*/
 .hero {
   grid-area: hero;
 }
 .hero-image {
-  max-width: 100%;
+  width: 100%;
 }
 /* Content Section*/
 .content-wrapper {
   grid-area: content-wrapper;
   text-align: center;
+  margin-top: 20px;
 }
 .header {
-  font-size: 1.5em;
+  font-size: 2.5em;
   font-weight: 300;
   text-transform: uppercase;
-  margin: 10px 30px;
+  margin: 10px 80px;
 }
 .header span {
   color: var(--dark-grayish-red);
@@ -114,15 +116,15 @@ a {
   font-weight: 400;
 }
 .content {
-  font-size: 0.6em;
-  line-height: 13px;
+  font-size: 1em;
+  line-height: 20px;
   margin: 0px 10px;
 }
 /* Email Input */
 .email {
   grid-area: email;
   position: relative;
-  margin: 10px auto;
+  margin: 20px 30px;
   padding: 3px;
 }
 /* Submit button */
@@ -132,32 +134,36 @@ a {
 }
 /* Error Message Bubble */
 .error-message {
-  font-size: 0.5em;
+  font-size: 0.9em;
   color: var(--soft-red);
   margin-top: 5px;
   padding-left: 10px;
   width: 100%;
   height: 15px;
 }
-/* Exclamation Mark Image */
+/* Exclamation Mark Error Image */
 .exclamation-mark {
-  width: 10px;
-  height: 10px;
+  width: 27px;
+  height: 27px;
   position: absolute;
-  top: 8px;
-  right: 45px;
+  top: 7px;
+  right: 70px;
 }
 
 /* Hide the error input state */
 .hidden {
   display: none;
 }
-
-/* -------------------------- Media queries for minimum 650px wide screens */
-@media (min-width: 600px) {
+/*-------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+/* -------------- Media queries for minimum 1000px wide screens ------------*/
+/*-------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------*/
+@media (min-width: 1000px) {
   /*  ----------------------- General styles */
   input[type="email"] {
-    height: 25px;
+    height: 40px;
+    width: 300px;
     box-shadow: unset;
   }
   /* Button */
@@ -165,19 +171,21 @@ a {
     border: none;
     border-radius: 20px;
     background: var(--second-linear-gradient);
+    box-shadow: 0 10px 30px var(--desaturated-red);
     position: absolute;
     top: 3px;
     right: 3px;
-    height: 24px;
-    width: 35px;
+    height: 40px;
+    width: 60px;
   }
   button:hover {
     cursor: pointer;
     background: var(--first-linear-gradient);
-    width: 45px;
+    box-shadow: 0 10px 30px var(--desaturated-red);
+    width: 75px;
     transition: width 0.2s ease;
   }
-  /* Reseting all properties of respective class to unset  */
+  /* Reseting all properties of respective class to unset */
   .wrapper,
   .content-wrapper,
   .hero-image {
@@ -194,29 +202,33 @@ a {
       "content-wrapper hero"
       "email hero";
     column-gap: 80px;
-    max-width: min-content;
-    height: 100%;
+    width: 80%;
+    max-width: 950px;
+    min-height: 600px;
+    max-height: 625px;
   }
-  /* Logo Section*/
+  /* Logo Section */
   .logo {
-    width: 80px;
-    margin: 30px 0 0 0;
+    width: 130px;
+    margin: 50px 0 0 0;
   }
-  /* Content Section*/
+  /* Content Section */
   .content-wrapper {
     height: min-content;
   }
   .header {
-    font-size: 2em;
-    margin: 0 60px 0 0;
+    font-size: 3.2em;
+    letter-spacing: 0.3em;
+    margin: 10px 60px 0 0;
   }
   .content {
     margin: 20px 0 0 0;
+    line-height: 1.5em;
   }
   /* Email Input */
   .email {
-    margin-top: 10px;
-    width: 100%;
+    margin: 10px 50px 0 0;
+    width: min-content;
     height: max-content;
   }
   /* Submit button */
@@ -226,24 +238,25 @@ a {
   }
   /* Error Message Bubble */
   .error-message {
-    font-size: 0.5em;
+    font-size: 1em;
     color: var(--soft-red);
     margin-top: 5px;
     padding-left: 10px;
     width: 100%;
     height: 15px;
   }
-  /* Exclamation Mark Image */
+  /* Exclamation Mark Error Image */
   .exclamation-mark {
     top: 10px;
-    right: 55px;
+    right: 81px;
   }
   /* Hero Image */
   .hero {
+    position: relative;
     height: 100%;
   }
   .hero-image {
     height: 100%;
-    width: 300px;
+    width: 100%;
   }
 }
